@@ -1,0 +1,10 @@
+{% extends "portfolio/home.html" %}
+{% block title %}
+Services
+{% endblock title %}
+{% block content %}
+{% for service in services %}
+<h3><ul><li>{{ service }}</li></ul></h3>
+
+{% endfor %}
+{% endblock content %}

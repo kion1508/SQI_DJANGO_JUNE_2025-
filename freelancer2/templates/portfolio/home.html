@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>{% block title %}Freelancer Portfolio{% endblock %}</title>
+  <style>
+    /* Reset + Base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Header/Nav */
+    header {
+      background-color: #111827;
+      color: white;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #38bdf8;
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+    .nav-links li a {
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    .nav-links li a:hover {
+      color: #38bdf8;
+    }
+    .about {
+      margin-top: 3rem;
+    }
+    .about h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #111827;
+    }
+    .about p {
+      font-size: 1rem;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    /* Main Content */
+    main {
+      padding: 3rem 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #111827;
+      color: #bbb;
+      text-align: center;
+      padding: 1.5rem 2rem;
+      margin-top: 3rem;
+    }
+      .hero {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+      }
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+  {% block extra_styles %}
+  {% endblock extra_styles %}
+
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div class="logo">Freelancing</div>
+      <ul class="nav-links">
+        <li><a href="/services/">Services</a></li>
+        <li><a href="/testimonials/">Testimonials</a></li>
+        <li><a href="/case-studies/">Case Studies</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/pricing/">Pricing</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    {% block content %}
+    <!-- Page content goes here -->
+    <div class="hero">
+      <h1>Welcome to FreeFreelancing</h1>
+      <p>Your one-stop platform to showcase your freelance work, connect with clients, and grow your career — for free.</p>
+      <a href="/services/">Explore My Services</a>
+    </div>
+
+    <div class="about">
+      <h2>About This Website</h2>
+      <p>
+        FreeFreelancing is a modern portfolio site designed to highlight the strengths and skills of freelancers across the globe. 
+        Whether you're a web developer, designer, writer, or consultant, this site is built to help you showcase your work, 
+        attract potential clients, and maintain a professional online presence.
+      </p>
+      <p style="margin-top: 1rem;">
+        This website features dedicated sections for services, client testimonials, case studies of past projects, 
+        blog content for sharing expertise, and a clear pricing page to inform potential clients of your offerings.
+      </p>
+    </div>
+    {% endblock %}
+  </main>
+
+  <footer>
+    &copy; 2025 Freelancing. Crafted with passion.
+  </footer>
+
+</body>
+</html>

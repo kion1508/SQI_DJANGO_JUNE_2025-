@@ -1,0 +1,27 @@
+
+{% extends "portfolio/home.html" %}
+
+{% block title %}
+Testimonials
+{% endblock title %}
+{% load static %}
+
+{% block extra_styles %}
+<link rel="stylesheet" href="{% static 'css/testimonials.css' %}">
+{% endblock extra_styles %}
+
+{% block content %}
+<h2 class="section-title">What Clients Say</h2>
+
+<div class="testimonial-list">
+  {% for name, testify in testimonials.items %}
+    <div class="testimonial-row">
+      <img src="{% static 'images/man.jpg' %}" alt="{{ name }}" class="testimonial-pic">
+      <div class="testimonial-info">
+        <p class="testimonial-text">“{{ testify }}”</p>
+        <p class="testimonial-name">— {{ name }}</p>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+{% endblock content %}

@@ -1,0 +1,8 @@
+{% extends "store/home.html" %}
+
+{% block content %}
+{% for album in albums %}
+    <h2>{{ album.title }} {{ album.release_date }}  by <strong>{{ album.artist.name }}</strong></h2>
+            
+    {% endfor %}
+{% endblock content %}

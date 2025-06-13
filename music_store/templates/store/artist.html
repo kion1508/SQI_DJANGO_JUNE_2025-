@@ -1,0 +1,7 @@
+{% extends "store/home.html" %}
+{% block content %}
+  {% for artist in artists %}
+    <h2>{{ artist.name}} {{artist.debut_year}}</h2>
+    
+    {% endfor %} 
+{% endblock content %}

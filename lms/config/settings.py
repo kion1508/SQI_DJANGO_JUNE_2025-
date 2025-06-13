@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     #local
     'authors',
     'library',
+    'inheritance',
 ]
 
 MIDDLEWARE = [

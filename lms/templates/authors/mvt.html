@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Authors Ordered By Birthdate</h2>
+    {% for author in authors_ordered_by_birthdate %}
+        <h3>{{ author.first_name }} {{ author.last_name }} born on {{ author.birth_date }}</h3>
+        
+    {% endfor %}
+
+
+    <h2>Authors in Default Order</h2>
+    {% for author in authors %}
+        <h3>{{ author.first_name }} {{ author.last_name }} born on {{ author.birth_date }}</h3>
+        
+    {% endfor %}
+  
+    <h2>Books ordered by Title Descending</h2>
+    {% for book in books_ordered_by_title %}
+        <p>Title: {{ book.title }}</p>
+        <p>Number of Pages: {{ book.number_of_pages }}</p>
+        <p>Published On: {{ book.published_on }}</p>
+        <p>Written By: {{ book.author.first_name}} {{ book.author.last_name }}</p>
+    {% endfor %}
+
+    <h2>Authors and Their Books</h2>
+    {% for author in authors %}
+        <h3>{{ author }}</h3>
+        {% for book in author.book_set.all %}
+            <p>Title: {{ book.title }}</p>
+            <p>Number of Pages: {{ book.number_of_pages }}</p>
+            <p>Published On: {{ book.published_on }}</p>
+
+        {% endfor %}
+    {% endfor %}
+
+
+</body>
+</html>
