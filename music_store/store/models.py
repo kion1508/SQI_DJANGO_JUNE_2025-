@@ -21,7 +21,7 @@ class Album(models.Model):
 
 class Song(models.Model):
     song_title=models.CharField(max_length=100)
-    duration=models.TimeField()
+    duration=models.CharField(max_length=12)
     album=models.ForeignKey(Album,on_delete=models.CASCADE)
 
     def __str__(self):

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Artist, Album
+from .models import Artist, Album, Song
 # Create your views here.
 def artist(request):
     
@@ -15,3 +15,12 @@ def album(request):
     return render (request,'store/album.html',context)
 def home(request):
     return render (request,'store/home.html')
+def song(request):
+    
+    context={
+        'songs': Song.objects.select_related('album').all(),
+        'song_artists':Song.objects.get(),
+        
+    }
+
+    return render (request,'store/song.html',context)

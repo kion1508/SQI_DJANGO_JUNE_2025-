@@ -1,0 +1,7 @@
+{% extends "store/home.html" %}
+{% block content %}
+{% for song in songs %}
+
+<h4>song title=> {{ song.song_title }}  <br>  duration=> {{ song.duration }} <br>in album=> {{  song.album.title}} <br> by {{ album.artist.name }}</h4>
+{% endfor %}
+{% endblock content %}
