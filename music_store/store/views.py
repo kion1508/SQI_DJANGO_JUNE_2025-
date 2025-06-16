@@ -19,7 +19,7 @@ def song(request):
     
     context={
         'songs': Song.objects.select_related('album').all(),
-        'song_artists':Song.objects.get(),
+        'song_artists':Artist.objects.all()
         
     }
 
